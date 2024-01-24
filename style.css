@@ -1,0 +1,105 @@
+body{
+  font-family: sans-serif;
+}
+h3{
+  text-align: center;
+}
+.header-banner{
+  height: 75px;
+  background-color: #000000;
+  padding: 10px 20px; 
+}
+h1{
+  color: white;
+}
+.svs-copyright{
+color:#00A6CE;
+text-align: center;
+font-weight: bold;
+}
+.products-grid .acuve-product1 {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 30px;
+}
+select {
+  width: 40%;
+}
+.price span{
+  color: #F93549;
+  font-weight: bold;
+}
+button , .submit{
+  padding: 10px 25px;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.buynow-button{
+  text-align: center;
+  padding: 20px 20px;
+}
+button:hover ,.submit:hover{
+  color: #fff;
+background-color: #f00;
+}
+.form-width .asterik{
+  color: #f00;
+  font-weight: bold;
+}
+.text-danger{
+  color: #f00;
+  font-size: 13px;
+}
+input[type=text],input[type=email],input[type=password],#fstate {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form{
+  padding: 0 30px;
+}
+.form-width{
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+footer{
+  margin: 30px 0;
+}
+
+
+@media (min-width: 768px){
+  .row{
+    display: flex;
+  }
+  .form-row{
+    display: flex;
+  }
+  .form-width{
+    width: 50%;
+  }
+  main{
+    padding: 0 15%;
+  }
+  .header-banner{
+    display: flex;
+  }
+  .svs-text{
+    width: 60%;
+    text-align: center;
+  }
+  .products-grid .acuve-product1 {
+    margin: 30px;
+  }
+  .price-qty{
+    display: flex;
+  }
+  .quantity{
+    width: 40%;
+  }
+}

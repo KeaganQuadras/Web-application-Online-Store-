@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+
+		<title>Online-Store</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="lens.js"></script>
+	</head>
+	<body >
+      <div id="wrapper">
+        <header>
+          <div class="header-banner">
+            <div>
+            <img src="Images/svs-cle-logo.png" alt="svs-logo" >
+            </div>
+            <div class="svs-text">
+              <h1>SVS VISION</h1>
+            </div>
+            <div>
+              <img src="Images/svs1.png" alt="svs-logo" >
+              </div>
+          </div>
+        </header>
+        <main>
+          <div class="products-grid">
+            <div class="row">
+              <div class="acuve-product1">
+                <img src="Images/acuve.jpeg" alt="acuve" >
+                <h3>Acuvue Oasys 2-Week 24pk</h3>
+                <div class="price-qty">
+                  <div class="quantity">
+                    <label for="lens">Quantity:</label>
+                      <select name="lens" id="lens">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+                  </div>
+                  <div class="price">Price: <span>$7.99 PER BOX</span></div>
+                </div>
+              </div>
+              <div class="acuve-product1">
+                <img src="Images/biotrue.jpeg" alt="Biotrue" >
+                <h3>Biotrue Oneday 30pk - Clear</h3>
+                <div class="price-qty">
+                  <div class="quantity">
+                    <label for="lens1">Quantity:</label>
+                      <select name="lens" id="lens1">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+                  </div>
+                  <div class="price">Price: <span>$6.99 PER BOX</span></div>
+                </div>      
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="buynow-button">
+              <button onclick="buyProduct()">Buy now</button>
+            </div>
+          <span id="input-amountLess" class="text-danger" style="text-align: center;font-weight: bold;"></span>
+          </div>
+          <div class="form-elements" id="details" style="display: none;">
+            <form name="Form">
+              <div id="printablediv" style="display:none;" >
+                <table border="1" cellpadding="3" id="printTable">
+                  <tbody><tr>
+                      <th>Item</th>
+                      <th>Quantity</th>      
+                      <th>Unit Price</th>
+                      <th>Total</th>
+                  </tr>
+                  <tr>
+                      <td id="Acuve">Acuvue Oasys 2-Week 24pk</td>
+                      <td id="AcuveQuantity"></td>      
+                      <td id="AcuvePrice">7.99</td>  
+                      <td id="Total"></td>
+                  </tr>
+                  <tr>
+                    <td id="Biotrue">Biotrue Oneday 30pk - Clear</td>
+                    <td id="BiotrueQuantity"></td>      
+                    <td id="BiotruePrice">6.99</td>  
+                    <td id="BiotrueTotal"></td>
+                  </tr>  
+                  <tr>
+                    <td>SubTotal</td>
+                    <td></td>      
+                    <td></td>  
+                    <td id="totalCost"></td>
+                  </tr> 
+                  <tr>
+                    <td>Tax</td>
+                    <td></td>      
+                    <td></td>  
+                    <td id="provinceTax"></td>
+                  </tr>  
+                  <tr>
+                    <td>Total</td>
+                    <td></td>      
+                    <td></td>  
+                    <td id="totalPrice"></td>
+                  </tr>            
+                 
+              </tbody></table>
+              <div id="name" ></div>
+              <div id="email" ></div>
+              <div id="addressDet" ></div>
+              </div>
+              <div class="basic-details">
+                <h3>Basic Details</h3>
+                <div class="form-row">
+                  <div class="form-width">
+                      <label for="fname">First Name <span class="asterik">*</span></label>
+                      <div>
+                      <input type="text" id="fname" name="firstname" placeholder="Your name.." >
+                      </div>
+                      <span id="input-FirstName" class="text-danger"></span>
+                  </div>
+                    <div class="form-width">
+                        <label for="lname">Last Name <span class="asterik">*</span></label>
+                        <div>
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                        </div>
+                        <span id="input-LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-width">
+                      <label for="femail">Email <span class="asterik">*</span></label>
+                      <div>
+                      <input type="text" id="femail" name="email" placeholder="Your email..">
+                      </div>
+                      <span id="input-Email" class="text-danger"></span>
+                  </div>
+                    <div class="form-width">
+                      <label for="lphone">Phone <span class="asterik">*</span></label>
+                      <div>
+                      <input type="text" id="lphone" name="phone" placeholder="Your phone..">
+                      </div>
+                      <span id="input-phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-width">
+                      <label for="fpassword">Password <span class="asterik">*</span></label>
+                      <div>
+                      <input type="password" id="fpassword" name="password" placeholder="Your password..">
+                      </div>
+                      <span id="input-password" class="text-danger"></span>
+                  </div>
+                  <div class="form-width">
+                    <label for="fconfirmpassword">Confirm Password <span class="asterik">*</span></label>
+                    <div>
+                    <input type="password" id="fconfirmpassword" name="confirmpassword" placeholder="Your confirmpassword..">
+                    </div>
+                  <span id="input-fconfirmpassword" class="text-danger"></span>
+                  </div>             
+                 </div>
+              <div class="address-details">
+                <h3>Address Details</h3>
+                <div class="form-row">
+                  <div class="form-width">
+                      <label for="faddress">Address <span class="asterik">*</span></label>
+                      <div>
+                      <input type="text" id="faddress" name="address" placeholder="Your address..">
+                      </div>
+                      <span id="input-faddress" class="text-danger"></span>
+                  </div>
+                    <div class="form-width">
+                      <label for="lname">City <span class="asterik">*</span></label>
+                      <div>
+                      <input type="text" id="lcity" name="city" placeholder="Your city..">
+                      </div>
+                      <span id="input-lcity" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-width">
+                      <label for="fstate">State <span class="asterik">*</span></label>
+                      <div>       
+                          <select name="state" id="fstate">
+                            <option value="ON">ON</option>
+                            <option value="BC">BC</option>
+                            <option value="QC">QC</option>
+                            <option value="NS">NS</option>
+                            <option value="AB">AB</option>
+                            <option value="AB">MB</option>
+                          </select>
+                      </div>
+                      <span id="input-fstate" class="text-danger"></span>
+                  </div>
+                    <div class="form-width">
+                      <label for="lzip">Zip Code <span class="asterik">*</span> </label>
+                      <div>
+                      <input type="text" id="lzip" name="zip" placeholder="Your zip..">
+                      </div>
+                      <span id="input-lzip" class="text-danger"></span>
+                    </div>
+                </div>
+              </div>
+              <div class="card-details">
+                <h3>Card Details</h3>
+                <div class="form-row">
+                  <div class="form-width">
+                      <label for="fcardname">Card Name <span class="asterik">*</span></label>
+                      <div>
+                      <input type="text" id="fcardname" name="cardname" placeholder="Your CardName..">
+                      </div>
+                      <span id="input-fcardname" class="text-danger"></span>
+                  </div>
+                  <div class="form-width">
+                    <label for="fcardnumber">Card Number <span class="asterik">*</span></label>
+                    <div>
+                    <input type="text" id="fcardnumber"   name="cardnumber" placeholder="Your CardNumber.." >
+                    </div>
+                    <span id="input-fcardnumber" class="text-danger"></span>
+                </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-width">
+                      <label for="fexpiry">Expiry <span class="asterik">*</span></label>
+                      <div>
+                      <input type="text" id="fexpiry" maxlength="7" name="expiry" placeholder="(MM/yyyy)" onkeyup="formatString(event);">
+                      </div>
+                      <span id="input-fexpiry" class="text-danger"></span>
+                  </div>
+                    <div class="form-width">
+                      <label for="lcvv">CVV <span class="asterik">*</span></label>
+                      <div>
+                      <input type="text" id="lcvv" name="cvv" placeholder="Please mention Cvv..">
+                      </div>
+                      <span id="input-lcvv" class="text-danger"></span>
+                    </div>
+                </div>
+              </div>
+              <div class="buynow-button">       
+                <input type="button" value="submit" class="submit" onclick="javascript:checkForm('printablediv')" >
+                </div>
+             </div>
+            </form>
+          </div>
+        </main>
+      </div>
+      <footer>
+        <div class="svs-copyright">
+          © SVS VISION | All rights reserved worldwide | svsvision.com
+        </div>
+      </footer>
+	</body> 
+</html>
